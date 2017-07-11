@@ -1,17 +1,19 @@
 var { expect } = require('chai');
-var BubblesSort = require('../scripts/bubble-sort.js');
-var GenerateArray = require('../scripts/generateArray.js')
+var bubblesSort = require('../scripts/bubble-sort.js');
+var generateArray = require('../scripts/generateArray.js')
 
 describe('BubbleSort Fun Time', function() {
   let sortArray;
 
   beforeEach(function() {
-    sortArray = GenerateArray(5)
-    console.log(sortArray)
+    sortArray = generateArray(10)
   })
 
   it('should be an array', function () {
     expect(sortArray).to.be.an('array')
   })
 
+  it('should be a function', function() {
+    expect(bubblesSort).to.be.function
+  })
 })
