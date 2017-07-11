@@ -19,7 +19,6 @@ const mergeSort = (array) => {
 	} else if (array.length > 1) {
 		array1 = array.splice(0, Math.floor(array.length/2))
 		array2 = array.splice(0, array.length)
-		console.log(array1, array2)
 		return mergeArrays(mergeSort(array1), mergeSort(array2))
 	}
 }
