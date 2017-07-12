@@ -4,16 +4,18 @@ const quickSort = (array) => {
   } else {
   	let p = array[array.length - 1]
 	  let left = []
+	  // let middle = []
 	  let right = []
-	  for(let j = 1; j < array.length - 1; j++) {
-	    if (array[j] < p) {
+	  for(let j = 0; j < (array.length - 1); j++) {
+	    // console.log('array', array)
+	    if (array[j] <= p) {
 	      left.push(array[j])
 	    } else if (array[j] > p) {
 	     	right.push(array[j])
 	    	}
 	    }
-	    return [...quickSort(left), p, ...quickSort(right)]
-	}
+	  return [...quickSort(left), p, ...quickSort(right)]
+  }
 }
 
 module.exports = quickSort
