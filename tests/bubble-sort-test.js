@@ -33,6 +33,8 @@ describe('BubbleSort Fun Time', () => {
     let sortedArray = sortArray.sort((a, b) => {
       return a - b
     })
+    console.log('bubble sort array', sortArray)
+    console.log('bubble sorted array', sortedArray)
 
     expect(sortArray).to.be.an('array')
     expect(bubblesSort(sortArray)).to.deep.equal(sortedArray)

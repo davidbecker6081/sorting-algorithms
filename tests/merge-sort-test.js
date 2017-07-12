@@ -21,69 +21,75 @@ describe('BubbleSort Fun Time', () => {
 
   it('should have the same elements for unsorted and sorted', () => {
     let sortArray = generateArray(10)
+    let copy = Array.from(sortArray)
     let sortedArray = sortArray.sort((a, b) => {
       return a - b
     })
 
-    expect(sortedArray).to.include.members(sortArray);
+    expect(copy).to.include.members(sortedArray);
   })
 
-  it.only('should accept an array of any length', () => {
+  it('should accept an array of any length', () => {
     let sortArray = generateArray(5)
+    let copy = Array.from(sortArray)
     let sortedArray = sortArray.sort((a, b) => {
       return a - b
     })
-    console.log(sortedArray)
-    console.log(sortArray);
 
-    expect(sortArray).to.be.an('array')
-    expect(mergeSort(sortArray)).to.deep.equal(sortedArray)
+    expect(copy).to.be.an('array')
+    expect(mergeSort(copy)).to.deep.equal(sortedArray)
   })
 
   it('should sort an array of numbers', () => {
     let sortArray = generateArray(5)
+    let copy = Array.from(sortArray)
     let sortedArray = sortArray.sort((a, b) => {
       return a - b
     })
 
-    expect(sortArray).to.be.an('array')
-    expect(mergeSort(sortArray)).to.deep.equal(sortedArray)
+    expect(copy).to.be.an('array')
+    expect(mergeSort(copy)).to.deep.equal(sortedArray)
   })
 
   it('should sort an array of letters', () => {
     let sortArray = ['b', 'd', 'a', 'c']
-    let sortedArray = sortArray.sort((a, b) => {
-      return a - b
-    })
-
-    expect(sortArray).to.be.an('array')
-    expect(mergeSort(sortArray)).to.deep.equal(sortedArray)
+    let copy = Array.from(sortArray)
+    let sortedArray = sortArray.sort()
+    
+    expect(copy).to.be.an('array')
+    expect(mergeSort(copy)).to.deep.equal(sortedArray)
   })
 
   it('should sort positive numbers', () => {
     let sortArray = [5, 10, 2, 4, 55, 3]
+    let copy = Array.from(sortArray)
     let sortedArray = sortArray.sort((a, b) => {
       return a - b
     })
 
-    expect(mergeSort(sortArray)).to.deep.equal(sortedArray)
+    expect(copy).to.be.an('array')
+    expect(mergeSort(copy)).to.deep.equal(sortedArray)
   })
 
   it('should sort negative numbers', () => {
     let sortArray = [-5, -10, -2, -4, -55, -3]
+    let copy = Array.from(sortArray)
     let sortedArray = sortArray.sort((a, b) => {
       return a - b
     })
 
-    expect(mergeSort(sortArray)).to.deep.equal(sortedArray)
+    expect(copy).to.be.an('array')
+    expect(mergeSort(copy)).to.deep.equal(sortedArray)
   })
 
   it('should sort positive and negative numbers', () => {
     let sortArray = [5, -10, 2, -4, 55, 3]
+    let copy = Array.from(sortArray)
     let sortedArray = sortArray.sort((a, b) => {
       return a - b
     })
 
-    expect(mergeSort(sortArray)).to.deep.equal(sortedArray)
+    expect(copy).to.be.an('array')
+    expect(mergeSort(copy)).to.deep.equal(sortedArray)
   })
 })

@@ -50,12 +50,11 @@ describe('BubbleSort Fun Time', () => {
 
   it('should sort an array of letters', () => {
     let sortArray = ['b', 'd', 'a', 'c']
-    let sortedArray = sortArray.sort((a, b) => {
-      return a - b
-    })
+    let copy = Array.from(sortArray)
+    let sortedArray = sortArray.sort()
 
     expect(sortArray).to.be.an('array')
-    expect(insertionSort(sortArray)).to.deep.equal(sortedArray)
+    expect(insertionSort(copy)).to.deep.equal(sortedArray)
   })
 
   it('should sort positive numbers', () => {
