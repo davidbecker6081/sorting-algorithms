@@ -16,40 +16,72 @@ describe('BubbleSort Fun Time', () => {
 
   it('should only accept arrays', () => {
     expect(bubblesSort('string')).to.equal('string is not an Array!')
+    expect(bubblesSort(5)).to.equal('5 is not an Array!')
+  })
+
+  it('should have the same elements for unsorted and sorted', () => {
+    let sortArray = generateArray(10)
+    let sortedArray = sortArray.sort((a, b) => {
+      return a - b
+    })
+
+    expect(sortedArray).to.include.members(sortArray);
   })
 
   it('should accept an array of any length', () => {
     let sortArray = generateArray(10)
-    let sortedArray = bubblesSort(sortArray)
+    let sortedArray = sortArray.sort((a, b) => {
+      return a - b
+    })
 
-    expect(sortArray).to.equal(sortArray)
-    expect(bubblesSort(sortArray)).to.equal(sortedArray)
+    expect(sortArray).to.be.an('array')
+    expect(bubblesSort(sortArray)).to.deep.equal(sortedArray)
   })
 
   it('should sort an array of numbers', () => {
-    let sortArrayNums = generateArray(5)
-    let sortedArrayNums = bubblesSort(sortArrayNums)
+    let sortArray = generateArray(5)
+    let sortedArray = sortArray.sort((a, b) => {
+      return a - b
+    })
 
-    expect(sortArrayNums).to.equal(sortArrayNums)
-    expect(bubblesSort(sortArrayNums)).to.equal(sortedArrayNums)
+    expect(sortArray).to.be.an('array')
+    expect(bubblesSort(sortArray)).to.deep.equal(sortedArray)
   })
 
   it('should sort an array of letters', () => {
-    let sortArrayLet = ['a', 'c', 'd', 'b']
-    let sortedArrayLet = bubblesSort(sortArrayLet)
+    let sortArray = ['b', 'd', 'a', 'c']
+    let sortedArray = sortArray.sort((a, b) => {
+      return a - b
+    })
 
-    expect(sortArrayLet).to.equal(sortArrayLet)
-    expect(bubblesSort(sortArrayLet)).to.equal(sortedArrayLet)
+    expect(sortArray).to.be.an('array')
+    expect(bubblesSort(sortArray)).to.deep.equal(sortedArray)
   })
 
-  it('should not accept an array of numbers and letters')
+  it('should sort positive numbers', () => {
+    let sortArray = [5, 10, 2, 4, 55, 3]
+    let sortedArray = sortArray.sort((a, b) => {
+      return a - b
+    })
 
-  it('positive numbers')
+    expect(bubblesSort(sortArray)).to.deep.equal(sortedArray)
+  })
 
-  it('negative numbers')
+  it('should sort negative numbers', () => {
+    let sortArray = [-5, -10, -2, -4, -55, -3]
+    let sortedArray = sortArray.sort((a, b) => {
+      return a - b
+    })
 
-  it('should have the same elements for unsorted and sorted', () => {
-    expect([1, 2, 3]).to.include.members([1, 2]);
-    expect([1, 2, 3]).to.not.have.members([1, 2]);
+    expect(bubblesSort(sortArray)).to.deep.equal(sortedArray)
+  })
+
+  it('should sort positive and negative numbers', () => {
+    let sortArray = [5, -10, 2, -4, 55, 3]
+    let sortedArray = sortArray.sort((a, b) => {
+      return a - b
+    })
+
+    expect(bubblesSort(sortArray)).to.deep.equal(sortedArray)
   })
 })
