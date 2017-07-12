@@ -2,7 +2,7 @@ var { expect } = require('chai');
 var mergeSort = require('../scripts/merge-sort.js');
 var generateArray = require('../scripts/generateArray.js')
 
-describe('BubbleSort Fun Time', () => {
+describe('Merge Sort Fun Time', () => {
 
   it('should be an array', () => {
     let sortArray = generateArray(10)
@@ -20,16 +20,6 @@ describe('BubbleSort Fun Time', () => {
   })
 
   it('should have the same elements for unsorted and sorted', () => {
-    let sortArray = generateArray(10)
-    let copy = Array.from(sortArray)
-    let sortedArray = sortArray.sort((a, b) => {
-      return a - b
-    })
-
-    expect(copy).to.include.members(sortedArray);
-  })
-
-  it('should accept an array of any length', () => {
     let sortArray = generateArray(5)
     let copy = Array.from(sortArray)
     let sortedArray = sortArray.sort((a, b) => {
@@ -40,8 +30,8 @@ describe('BubbleSort Fun Time', () => {
     expect(mergeSort(copy)).to.deep.equal(sortedArray)
   })
 
-  it('should sort an array of numbers', () => {
-    let sortArray = generateArray(5)
+  it('should accept an array of any length', () => {
+    let sortArray = generateArray(100)
     let copy = Array.from(sortArray)
     let sortedArray = sortArray.sort((a, b) => {
       return a - b
@@ -55,7 +45,7 @@ describe('BubbleSort Fun Time', () => {
     let sortArray = ['b', 'd', 'a', 'c']
     let copy = Array.from(sortArray)
     let sortedArray = sortArray.sort()
-    
+
     expect(copy).to.be.an('array')
     expect(mergeSort(copy)).to.deep.equal(sortedArray)
   })
