@@ -2,9 +2,9 @@ const quickSort = (array) => {
   if (array.length <= 1) {
     return array
   } else {
-    let p = array[array.length - 1]
-    let left = []
-    let right = []
+    const p = array[array.length - 1]
+    const left = []
+    const right = []
 
     for (let j = 0; j < (array.length - 1); j++) {
       if (array[j] <= p) {

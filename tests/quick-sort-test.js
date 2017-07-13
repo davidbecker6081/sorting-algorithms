@@ -26,7 +26,7 @@ describe('Quick Sort Fun Time', () => {
   })
 
   it('should accept an array of any length', () => {
-    let sortArray = generateArray(20)
+    let sortArray = generateArray(125000)
     let copy = Array.from(sortArray)
     let sortedArray = sortArray.sort((a, b) => {
       return a - b

@@ -1,5 +1,5 @@
 const mergeArrays = (array1, array2) => {
-  let mergedArray = []
+  const mergedArray = []
 
   while (array1.length > 0 && array2.length > 0) {
     if (array1[0] <= array2[0]) {
